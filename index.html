@@ -217,6 +217,10 @@ header{margin-top:6px!important}
 .panel.res .scorebox{flex:none!important}
 .panel.res .score{font-size:clamp(54px,5.8vw,76px)!important}
 .panel.res .scorebox:before{width:150px!important;height:150px!important}
+header .lib span{display:inline-block;font-family:'Do Hyeon',sans-serif;font-size:clamp(15px,1.6vw,21px);color:#0b1f4b;background:linear-gradient(180deg,#f7e3a1,#d4a83a);border:2px solid #fff6d6;border-radius:999px;padding:3px 14px;box-shadow:0 3px 0 #8a6a1f;white-space:nowrap}
+header .lib{display:none}
+.sc-lib{font-family:'Do Hyeon',sans-serif;font-size:clamp(15px,1.5vw,19px);line-height:1.2;color:#6b4a1a;border-top:2px dashed #c99a3c;padding-top:8px;width:85%}
+.sc-lib:empty{display:none}
 /* ===== 모바일·세로 화면: 상자를 세로로 쌓기 ===== */
 @media (max-width:860px),(orientation:portrait){
  html,body{height:auto!important;overflow:auto!important}
@@ -225,6 +229,8 @@ header{margin-top:6px!important}
  header h1{font-size:clamp(26px,7.4vw,44px)!important;white-space:normal!important;text-align:center}
  header .sub{font-size:clamp(14px,3.6vw,20px)!important}
  .ship{display:none}
+ header .lib{display:block}
+ .sc-lib{display:none}
  main{display:flex!important;flex-direction:column;gap:12px!important}
  .scroll{flex-direction:row;filter:none}
  .sc-top,.sc-bot{width:16px;height:auto;margin:-4px 0}
@@ -268,6 +274,7 @@ header{margin-top:6px!important}
  <header>
   <h1 id="title"></h1>
   <div class="sub" id="sub"></div>
+  <div class="lib" id="lib"></div>
   <svg class="ship l" viewBox="0 0 120 80" aria-hidden="true"><path d="M58 6v50" stroke="#5a3d0c" stroke-width="3"/><path d="M60 10c16 6 24 18 24 34H60z" fill="#fff6d6" stroke="#c99a3c" stroke-width="2"/><path d="M56 14c-12 6-18 16-18 30h18z" fill="#f2cf6b" stroke="#c99a3c" stroke-width="2"/><path d="M60 4l12 4-12 4z" fill="#e8202a"/><path d="M14 56h92l-12 16H28z" fill="#8a5a2e" stroke="#5a3d0c" stroke-width="2.5"/><g fill="#f7e3a1"><circle cx="40" cy="63" r="3"/><circle cx="54" cy="63" r="3"/><circle cx="68" cy="63" r="3"/><circle cx="82" cy="63" r="3"/></g><path d="M6 74q10-6 20 0t20 0 20 0 20 0 20 0 20 0" fill="none" stroke="#d9f3ff" stroke-width="2.5"/></svg>
   <svg class="ship r" viewBox="0 0 120 80" aria-hidden="true"><path d="M58 6v50" stroke="#5a3d0c" stroke-width="3"/><path d="M60 10c16 6 24 18 24 34H60z" fill="#fff6d6" stroke="#c99a3c" stroke-width="2"/><path d="M56 14c-12 6-18 16-18 30h18z" fill="#f2cf6b" stroke="#c99a3c" stroke-width="2"/><path d="M60 4l12 4-12 4z" fill="#e8202a"/><path d="M14 56h92l-12 16H28z" fill="#8a5a2e" stroke="#5a3d0c" stroke-width="2.5"/><g fill="#f7e3a1"><circle cx="40" cy="63" r="3"/><circle cx="54" cy="63" r="3"/><circle cx="68" cy="63" r="3"/><circle cx="82" cy="63" r="3"/></g><path d="M6 74q10-6 20 0t20 0 20 0 20 0 20 0 20 0" fill="none" stroke="#d9f3ff" stroke-width="2.5"/></svg>
  </header>
@@ -279,6 +286,7 @@ header{margin-top:6px!important}
     <div class="sc-name" id="scName">세이렌의 섬</div>
     <div class="sc-line">웃음으로<br>세이렌을<br>이겨라!</div>
     <div class="sc-pass"><b id="scPass">70</b>점<br>통과</div>
+    <div class="sc-lib" id="scLib"></div>
    </div>
    <div class="sc-bot"></div>
   </aside>
@@ -333,6 +341,7 @@ header{margin-top:6px!important}
 /* ================================================================
    웃음 점수 측정기 — 설정 (여기만 고치면 됩니다)
    ================================================================ */
+var LIBRARY_NAME = '수내고 혜윰도서관';   // 화면에 보이는 도서관 이름 (비우면 안 보임)
 var CLUB_LINE    = '오디세우스의 귀향길 · 관문 ③ 세이렌의 섬';   // 맨 위 검은 띠 (비우면 안 보임)
 var MISSION_NAME = '세이렌의 섬';                 // 미션(관문) 이름 — 인증서·결과에 나와요
 var MISSION_STORY= '세이렌의 노래에 홀리지 않으려면 웃음소리로 이겨야 해요!';
@@ -385,7 +394,7 @@ var FEED_LINES = 1;
 
 function $(id){return document.getElementById(id);}
 var DEMO=/[?&]demo/.test(location.search);   // 주소 끝에 ?demo 를 붙이면 카메라 없이 연습 모드
-$('title').textContent=TITLE;$('scName').textContent=MISSION_NAME;$('scPass').textContent=PASS_SCORE;$('story').textContent='🧜‍♀️ '+MISSION_STORY;if(CLUB_LINE)$('club').innerHTML='<span>'+CLUB_LINE.replace(/</g,'&lt;')+'</span>';$('sub').innerHTML=SUBTITLE;$('passInfo').textContent='⭐ '+PASS_SCORE+'점 이상이면 세이렌의 섬 통과!';
+$('title').textContent=TITLE;if(LIBRARY_NAME)$('scLib').innerHTML='📚<br>'+LIBRARY_NAME.replace(/</g,'&lt;').replace(' ','<br>');if(LIBRARY_NAME)$('lib').innerHTML='<span>📚 '+LIBRARY_NAME.replace(/</g,'&lt;')+'</span>';$('scName').textContent=MISSION_NAME;$('scPass').textContent=PASS_SCORE;$('story').textContent='🧜‍♀️ '+MISSION_STORY;if(CLUB_LINE)$('club').innerHTML='<span>'+CLUB_LINE.replace(/</g,'&lt;')+'</span>';$('sub').innerHTML=SUBTITLE;$('passInfo').textContent='⭐ '+PASS_SCORE+'점 이상이면 세이렌의 섬 통과!';
 if(!PRINT_ON)$('printBtn').classList.add('hidden');
 (function(){var s=$('smiles'),h='',e=['','','','',''];for(var i=0;i<18;i++){h+='<i style="left:'+(Math.random()*100).toFixed(1)+'%;width:'+(10+Math.random()*26).toFixed(0)+'px;aspect-ratio:1;animation-duration:'+(12+Math.random()*12).toFixed(1)+'s;animation-delay:'+(-Math.random()*20).toFixed(1)+'s">'+e[i%e.length]+'</i>';}s.innerHTML=h;})();
 
