@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>당신의 웃음을 보여주세요</title>
-<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Jua&family=Do+Hyeon&family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Gaegu:wght@700&family=Gamja+Flower&family=Jua&family=Do+Hyeon&family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#fff7d6;--ink:#2b2118;--muted:#7a5a3a;--pink:#ff4f8b;--orange:#ff8a1f;--yellow:#ffd23f;--green:#18a058;--blue:#2f7de1;--line:#f3dfa4;
  --cute:'Jua','Noto Sans KR',sans-serif;--gothic:'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','Noto Sans KR',sans-serif}
@@ -74,55 +74,62 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.55fr) min
 .board span{background:#fff4c2;border:2px solid #1b1b1b;border-radius:10px;padding:2px 10px;white-space:nowrap}
 .board b{color:#e8202a;font-weight:400}
 .passnote{font-family:'Black Han Sans',sans-serif;font-size:clamp(20px,2vw,26px);color:#1e3a8a}
-/* ===== 시장 축제 분위기 ===== */
-body{background:#ffdf3d!important;background-image:radial-gradient(circle,#ffeb7a 2px,transparent 2.5px)!important;background-size:22px 22px!important}
-.app{padding:0 16px 14px!important;gap:8px!important}
-.awning{height:30px;margin:0 -16px;flex:none;background:repeating-linear-gradient(90deg,#e8202a 0 46px,#fff 46px 92px);
- -webkit-mask:radial-gradient(circle at 23px 30px,transparent 0 0) ,linear-gradient(#000,#000);
- border-bottom:4px solid #1b1b1b;position:relative}
-.awning:after{content:"";position:absolute;left:0;right:0;bottom:-18px;height:18px;
- background:radial-gradient(circle at 23px 0,#e8202a 0 22px,transparent 23px) 0 0/92px 18px repeat-x,radial-gradient(circle at 69px 0,#fff 0 22px,transparent 23px) 0 0/92px 18px repeat-x}
-.flags{height:34px;margin:14px -16px 0;flex:none;background:
- url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='34'%3E%3Cpath d='M0 4 Q75 14 150 4' fill='none' stroke='%231b1b1b' stroke-width='2'/%3E%3Cpath d='M8 6l14 24 14-22z' fill='%23e8202a'/%3E%3Cpath d='M44 9l14 24 14-24z' fill='%231e88e5'/%3E%3Cpath d='M80 9l14 24 14-23z' fill='%2343a047'/%3E%3Cpath d='M116 7l14 24 14-25z' fill='%23ff8f00'/%3E%3C/svg%3E") repeat-x}
-header{position:relative;justify-content:center;flex-wrap:wrap;gap:4px 18px!important;margin-top:-4px}
-header .club{width:100%;text-align:center;font-family:'Do Hyeon',sans-serif;font-size:clamp(16px,1.7vw,22px);color:#fff;letter-spacing:.06em}
-header .club span{background:#1b1b1b;padding:3px 16px;border-radius:999px}
-header h1{font-family:'Black Han Sans','Do Hyeon',sans-serif!important;color:#e8202a!important;font-size:clamp(40px,5vw,66px)!important;
- -webkit-text-stroke:3px #fff!important;text-shadow:4px 4px 0 #1b1b1b,0 0 0 #000!important;letter-spacing:.02em;transform:rotate(-1.5deg)}
-header .sub{font-family:'Do Hyeon',sans-serif;font-size:clamp(20px,2.1vw,28px)!important;color:#1b1b1b!important;background:#fff;border:3px solid #1b1b1b;border-radius:10px;padding:2px 14px;transform:rotate(1.5deg);box-shadow:3px 3px 0 #1b1b1b}
-header .sub b{color:#e8202a!important}
-.burst{position:absolute;top:-6px;width:96px;height:96px;display:flex;align-items:center;justify-content:center;text-align:center;
- font-family:'Black Han Sans',sans-serif;font-size:21px;line-height:1.05;color:#fff;
- background:#e8202a;clip-path:polygon(50% 0,61% 18%,80% 8%,79% 29%,100% 31%,87% 50%,100% 69%,79% 71%,80% 92%,61% 82%,50% 100%,39% 82%,20% 92%,21% 71%,0 69%,13% 50%,0 31%,21% 29%,20% 8%,39% 18%);animation:wob 1.6s ease-in-out infinite}
-.burst.b1{left:8px;transform:rotate(-12deg)}
-.burst.b2{right:8px;background:#1e88e5;animation-delay:.5s}
-@keyframes wob{0%,100%{scale:1}50%{scale:1.1}}
-.panel{background:#fff!important;border:4px solid #1b1b1b!important;border-radius:18px!important;box-shadow:7px 7px 0 #1b1b1b!important}
-.stage{border:3px solid #1b1b1b}
-.ptitle{font-family:'Do Hyeon',sans-serif}
-.ptitle b{background:#e8202a!important;border:2px solid #1b1b1b}
-.btn{background:#e8202a!important;border:3px solid #1b1b1b!important;box-shadow:5px 5px 0 #1b1b1b!important;font-family:'Black Han Sans',sans-serif!important;letter-spacing:.03em}
-.btn:active{transform:translate(3px,3px)!important;box-shadow:2px 2px 0 #1b1b1b!important}
-.btn:disabled{background:#f4a3a7!important}
-.btn.sec{background:#fff!important;color:#1b1b1b!important;font-family:'Do Hyeon',sans-serif!important}
-.g .gb{border:3px solid #1b1b1b!important;background:#fff4c2!important;height:30px!important}
-.g.face .gb i{background:repeating-linear-gradient(45deg,#ff8f00 0 14px,#ffb300 14px 28px)!important}
-.g.voice .gb i{background:repeating-linear-gradient(45deg,#1e88e5 0 14px,#42a5f5 14px 28px)!important}
-.g .gl{font-family:'Do Hyeon',sans-serif}
-.how{border:3px dashed #1b1b1b!important;background:#fffbe6!important}
-.score{font-family:'Black Han Sans',sans-serif!important;color:#e8202a!important;-webkit-text-stroke:4px #fff!important;text-shadow:6px 6px 0 #1b1b1b!important;position:relative}
+/* ===== 오디세이아의 바다 ===== */
+body{background:linear-gradient(180deg,#0b1f4b 0%,#123a7a 38%,#0f5e8c 72%,#0a7a8f 100%)!important;color:#f6ecd2}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;
+ background:radial-gradient(circle at 82% 10%,rgba(255,236,170,.9) 0 34px,rgba(255,236,170,.25) 35px,rgba(255,236,170,0) 110px),
+ radial-gradient(1.5px 1.5px at 12% 8%,#fff,transparent),radial-gradient(1.5px 1.5px at 30% 14%,#fff,transparent),radial-gradient(1px 1px at 52% 6%,#fff,transparent),radial-gradient(1.5px 1.5px at 66% 16%,#fff,transparent),radial-gradient(1px 1px at 92% 22%,#fff,transparent),radial-gradient(1px 1px at 22% 22%,#fff,transparent)}
+.app{padding:10px 16px 14px!important;gap:8px!important;position:relative;z-index:1}
+.sea{position:fixed;left:0;right:0;bottom:0;height:120px;pointer-events:none;z-index:0}
+.sea i{position:absolute;left:0;width:200%;height:100%;background-repeat:repeat-x;background-size:400px 100%;animation:wave linear infinite}
+.sea i:nth-child(1){bottom:18px;opacity:.5;animation-duration:18s;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='120'%3E%3Cpath d='M0 40 Q50 10 100 40 T200 40 T300 40 T400 40 V120 H0z' fill='%231fa3c4'/%3E%3C/svg%3E")}
+.sea i:nth-child(2){bottom:0;opacity:.85;animation-duration:11s;animation-direction:reverse;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='120'%3E%3Cpath d='M0 60 Q50 30 100 60 T200 60 T300 60 T400 60 V120 H0z' fill='%23086b8a'/%3E%3Cpath d='M0 60 Q50 30 100 60 T200 60 T300 60 T400 60' fill='none' stroke='%23d9f3ff' stroke-width='3' stroke-dasharray='6 10'/%3E%3C/svg%3E")}
+@keyframes wave{to{transform:translateX(-400px)}}
+.meander{height:16px;flex:none;margin:0 -16px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='16'%3E%3Cpath d='M0 14H24V2H8V10H16V6' fill='none' stroke='%23e6c06b' stroke-width='2.4'/%3E%3C/svg%3E") repeat-x;opacity:.9}
+header{position:relative;justify-content:center;flex-wrap:wrap;gap:2px 18px!important;margin-top:2px}
+header .club{width:100%;text-align:center;font-family:'Do Hyeon',sans-serif;font-size:clamp(16px,1.7vw,22px);letter-spacing:.08em}
+header .club span{color:#0b1f4b;background:linear-gradient(180deg,#f7e3a1,#d4a83a);padding:3px 18px;border-radius:999px;box-shadow:0 2px 0 #8a6a1f}
+header h1{font-family:'Black Han Sans','Do Hyeon',sans-serif!important;font-size:clamp(36px,4.4vw,58px)!important;color:#f7e3a1!important;-webkit-text-stroke:0!important;
+ background:linear-gradient(180deg,#fff6d6 0%,#f2cf6b 55%,#c99a2e 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+ filter:drop-shadow(0 3px 0 #5a3d0c) drop-shadow(0 8px 14px rgba(0,0,0,.45));text-shadow:none!important;letter-spacing:.03em}
+header .sub{font-family:'Do Hyeon',sans-serif;font-size:clamp(17px,1.8vw,24px)!important;color:#e9f6ff!important;border:2px solid #e6c06b;border-radius:999px;padding:2px 16px;background:rgba(11,31,75,.55)}
+header .sub b{color:#ffd76a!important}
+.ship{position:absolute;top:2px;width:120px;height:80px;animation:bob 3.2s ease-in-out infinite}
+.ship.l{left:6px}.ship.r{right:6px;transform:scaleX(-1);animation-delay:1.1s}
+@keyframes bob{0%,100%{translate:0 0;rotate:-3deg}50%{translate:0 6px;rotate:3deg}}
+.panel{background:linear-gradient(180deg,#fbf3dc,#f1e2bb)!important;color:#2b1d0e;border:3px solid #c99a3c!important;border-radius:18px!important;box-shadow:0 0 0 5px rgba(11,31,75,.55),0 14px 30px rgba(0,0,0,.35)!important}
+.stage{border:3px solid #6b4a1a;border-radius:14px!important;box-shadow:inset 0 0 0 3px #e6c06b}
+.ptitle{font-family:'Do Hyeon',sans-serif;color:#2b1d0e}
+.ptitle b{background:#123a7a!important;border:2px solid #e6c06b;color:#f7e3a1!important}
+.btn{background:linear-gradient(180deg,#1a5fb4,#0d3b7a)!important;border:3px solid #e6c06b!important;box-shadow:0 5px 0 #071f45!important;font-family:'Black Han Sans',sans-serif!important;color:#fff6d6!important;letter-spacing:.03em}
+.btn:active{transform:translateY(3px)!important;box-shadow:0 2px 0 #071f45!important}
+.btn:disabled{background:#8aa3c7!important}
+.btn.sec{background:#fff8e6!important;color:#2b1d0e!important;font-family:'Do Hyeon',sans-serif!important;border:3px solid #c99a3c!important;box-shadow:0 4px 0 #b48a3a!important}
+.g .gb{border:2px solid #6b4a1a!important;background:#fff8e6!important;height:26px!important}
+.g.face .gb i{background:linear-gradient(90deg,#ffd76a,#ff9f43)!important}
+.g.voice .gb i{background:linear-gradient(90deg,#7fd6ff,#1a5fb4)!important}
+.g .gl{font-family:'Do Hyeon',sans-serif;color:#2b1d0e}.g .gl span{color:#6b4a1a!important}
+.how{border:2px dashed #b48a3a!important;background:rgba(255,250,235,.75)!important;color:#2b1d0e!important}
+.how .pass{color:#0d3b7a!important}
+.story{color:#0d3b7a!important}
+.score{font-family:'Black Han Sans',sans-serif!important;color:#0d3b7a!important;-webkit-text-stroke:3px #fff6d6!important;text-shadow:0 5px 0 #c99a3c,0 12px 18px rgba(0,0,0,.25)!important}
+.score small{color:#6b4a1a!important}
 .scorebox{position:relative}
-.scorebox:before{content:"";position:absolute;left:50%;top:44%;width:330px;height:330px;transform:translate(-50%,-50%);z-index:0;
- background:repeating-conic-gradient(#ffdf3d 0 10deg,#fff3a8 10deg 20deg);border-radius:50%;opacity:.9;animation:spin 14s linear infinite}
+.scorebox:before{content:"";position:absolute;left:50%;top:40%;width:250px;height:250px;transform:translate(-50%,-50%);z-index:0;border-radius:50%;
+ background:radial-gradient(circle,rgba(255,215,106,.55) 0 30%,rgba(255,215,106,0) 70%),repeating-conic-gradient(rgba(201,154,60,.25) 0 6deg,transparent 6deg 30deg);animation:spin 20s linear infinite}
 .scorebox>*{position:relative;z-index:1}
 @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
-.stamp{font-family:'Black Han Sans',sans-serif!important;border:3px solid #1b1b1b;box-shadow:4px 4px 0 #1b1b1b!important;background:#43a047!important}
-.stamp.fail{background:#9e9e9e!important}
-.msg{font-family:'Black Han Sans',sans-serif!important;font-size:clamp(24px,2.5vw,34px)!important;color:#1b1b1b;background:#fff;border:3px solid #1b1b1b;border-radius:14px;padding:6px 14px;box-shadow:4px 4px 0 #1b1b1b;transform:rotate(-1deg)}
-.count{-webkit-text-stroke:5px #1b1b1b!important;color:#ffdf3d!important;text-shadow:8px 8px 0 #e8202a!important;font-family:'Black Han Sans',sans-serif!important}
-
+.stamp{font-family:'Black Han Sans',sans-serif!important;background:#1f8a5b!important;border:3px solid #e6c06b;box-shadow:0 4px 0 #0e5236!important}
+.stamp.fail{background:#7a8aa3!important;box-shadow:0 4px 0 #4a5a73!important}
+.msg{font-family:'Black Han Sans',sans-serif!important;color:#2b1d0e;background:#fffaf0;border:2px solid #c99a3c;border-radius:12px;padding:6px 14px;box-shadow:0 3px 0 #b48a3a}
+.count{-webkit-text-stroke:5px #0b1f4b!important;color:#ffd76a!important;text-shadow:0 8px 0 #0d3b7a!important;font-family:'Black Han Sans',sans-serif!important}
+.tries{background:#0b1f4b!important;color:#ffd76a!important;border:2px solid #e6c06b}
+.board span{background:#fff8e6!important;border:2px solid #b48a3a!important;color:#2b1d0e}
+.board b{color:#0d3b7a!important}
+.passnote{color:#0d3b7a!important}
+.smiles i{opacity:.75!important;border-radius:50%;border:2px solid rgba(220,245,255,.7);background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.7),rgba(255,255,255,.05) 60%)}
+.confetti i{border-radius:50%!important}
 /* 겹침 정리 */
-.burst{top:-58px!important;width:84px!important;height:84px!important;font-size:18px!important}
 header h1{font-size:clamp(36px,4.4vw,58px)!important}
 header .sub{font-size:clamp(17px,1.8vw,24px)!important}
 .how{overflow:auto;font-size:clamp(13px,1.25vw,16px)!important;line-height:1.45!important;padding:10px 12px!important}
@@ -141,62 +148,136 @@ header .sub{font-size:clamp(17px,1.8vw,24px)!important}
 .panel.res .scorebox{justify-content:flex-start!important;padding-top:0;gap:6px!important}
 .panel.res .score{font-size:clamp(76px,8.6vw,112px)!important}
 .passnote{font-size:clamp(16px,1.6vw,20px)!important}
+/* 왼쪽 세로 미션 두루마리 + 카메라·점수 작게 */
+main{grid-template-columns:clamp(120px,11vw,150px) minmax(0,1.75fr) minmax(0,1fr)!important}
+.scroll{display:flex;flex-direction:column;min-height:0;filter:drop-shadow(0 10px 18px rgba(0,0,0,.4))}
+.sc-top,.sc-bot{height:22px;border-radius:12px;background:linear-gradient(180deg,#d9a94a,#8a5a1e);border:2px solid #5a3d0c;flex:none;margin:0 -6px}
+.sc-body{flex:1;min-height:0;background:linear-gradient(90deg,#e9d29a,#fbf0d2 30%,#fbf0d2 70%,#e9d29a);border-left:2px solid #b48a3a;border-right:2px solid #b48a3a;
+ display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;padding:10px 4px;text-align:center;color:#2b1d0e}
+.sc-ico{font-size:clamp(34px,3.6vw,46px)}
+.sc-name{writing-mode:vertical-rl;text-orientation:upright;font-family:'Black Han Sans',sans-serif;font-size:clamp(26px,2.8vw,36px);color:#0d3b7a;letter-spacing:.06em}
+.sc-line{font-family:'Do Hyeon',sans-serif;font-size:clamp(18px,1.9vw,24px);line-height:1.3;color:#2b1d0e}
+.sc-pass{font-family:'Do Hyeon',sans-serif;font-size:clamp(18px,1.9vw,24px);line-height:1.15;color:#fff6d6;background:#0d3b7a;border:2px solid #e6c06b;border-radius:14px;padding:6px 10px}
+.sc-pass b{font-family:'Black Han Sans',sans-serif;font-size:1.7em;font-weight:400;color:#ffd76a}
+.stage{flex:none!important;width:100%;aspect-ratio:4/3;max-height:100%;margin:auto 0}
+.panel.res .score,.score{font-size:clamp(64px,7vw,92px)!important}
+.scorebox:before{width:200px!important;height:200px!important}
+.panel.res .stamp{font-size:clamp(19px,1.9vw,25px)!important}
+.panel.res .msg{font-size:clamp(17px,1.75vw,23px)!important}
+.mic{position:absolute;left:50%;bottom:-6px;width:clamp(54px,5.4vw,72px);transform:translateX(-50%) rotate(-8deg);transform-origin:50% 100%;filter:drop-shadow(0 6px 8px rgba(0,0,0,.45));pointer-events:none;z-index:3}
+.mic svg{display:block;width:100%;height:auto;position:relative}
+.mic .ring{position:absolute;left:50%;top:20%;width:110%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%) scale(var(--lv,0));background:radial-gradient(circle,rgba(255,215,106,.75) 0 35%,rgba(255,215,106,0) 70%);transition:transform .08s linear}
+.mic.off{opacity:.35}
+.measure{bottom:auto!important;top:46px}
+/* 단순하게: 세이렌 강조 */
+.panel .club{width:100%;text-align:center;font-family:'Do Hyeon',sans-serif;font-size:clamp(17px,1.8vw,23px);letter-spacing:.06em;margin:-2px 0 8px;flex:none}
+.panel .club span{display:inline-block;color:#0b1f4b;background:linear-gradient(180deg,#f7e3a1,#d4a83a);padding:4px 18px;border-radius:999px;box-shadow:0 2px 0 #8a6a1f}
+.tries{top:62px!important}
+.how.siren{border:0!important;background:transparent!important;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;overflow:visible!important;padding:0!important}
+.siren .mermaid{font-size:clamp(110px,12vw,170px);line-height:1;filter:drop-shadow(0 10px 12px rgba(13,59,122,.35));animation:swim 3s ease-in-out infinite}
+@keyframes swim{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-10px) rotate(6deg)}}
+.siren .bubble{position:relative;font-family:'Black Han Sans',sans-serif;font-size:clamp(20px,2.1vw,28px);line-height:1.25;text-align:center;color:#2b1d0e;background:#fff;border:3px solid #0d3b7a;border-radius:20px;padding:8px 18px;margin-bottom:10px}
+.siren .bubble b{color:#0d3b7a;font-weight:400}
+.siren .bubble:after{content:"";position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);border:12px solid transparent;border-top-color:#0d3b7a;border-bottom:0}
+.sc-ico{font-size:clamp(54px,5.6vw,72px)!important}
+header{margin-top:6px!important}
+.ship{width:84px!important;height:56px!important;top:-4px!important}
+/* 여백 · 세이렌 왼쪽 + 말풍선 오른쪽 */
+.panel .club{margin:-2px 0 24px!important}
+.tries{top:78px!important}
+.how.siren{flex-direction:row!important;gap:6px!important}
+.siren .mermaid{font-size:clamp(156px,17vw,220px)!important;margin-left:-22px;flex:none}
+.siren .bubble{flex:none;min-width:0;word-break:keep-all;white-space:nowrap;margin:0 0 90px -26px!important;font-family:'Gamja Flower',cursive!important;font-weight:400;font-size:clamp(18px,1.8vw,24px)!important;line-height:1!important;padding:7px 10px!important;border-width:2px!important;border-radius:14px!important}
+.siren .bubble:after{left:-14px!important;top:58%;bottom:auto!important;transform:translateY(-50%)!important;border:12px solid transparent!important;border-right-color:#0d3b7a!important;border-left:0!important}
+.panel .club span{white-space:nowrap;font-size:clamp(14px,1.42vw,19px);padding:4px 12px}
+.siren .bubble{margin:0 0 100px -44px!important}
+/* 세이렌 캐릭터 · 비눗방울 말풍선 */
+.siren .mermaid{font-size:0!important;width:clamp(150px,15vw,200px);animation:bob2 2.4s ease-in-out infinite!important}
+.siren .mermaid svg{display:block;width:100%;height:auto;transition:transform .6s cubic-bezier(.3,1.4,.5,1)}
+.siren .mermaid.lying svg{transform:rotate(-82deg) translate(-38px,6px)}
+@keyframes bob2{0%,100%{transform:translateY(8px)}50%{transform:translateY(-14px)}}
+.siren .tear{animation:drip 1s ease-in infinite}
+@keyframes drip{0%{transform:translateY(0);opacity:1}100%{transform:translateY(8px);opacity:.3}}
+.siren .stars{transform-origin:100px 40px;animation:orbit 2s linear infinite}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.sc-ico svg{width:clamp(70px,7vw,96px);height:auto;display:block}
+.siren .bubble{border-radius:50%!important;width:clamp(118px,11vw,146px);aspect-ratio:1;display:flex;align-items:center;justify-content:center;flex-direction:column;box-sizing:border-box;text-align:center;
+ background:radial-gradient(circle at 30% 26%,rgba(255,255,255,.95) 0 7%,rgba(255,255,255,.2) 20%,rgba(170,225,255,.16) 52%,rgba(255,170,225,.26) 78%,rgba(255,255,255,.6) 100%)!important;
+ border:2px solid rgba(13,59,122,.35)!important;box-shadow:inset -7px -9px 14px rgba(150,110,255,.25),inset 7px 8px 12px rgba(110,215,255,.28),0 6px 14px rgba(13,59,122,.15)!important;
+ padding:10px!important;white-space:nowrap;color:#0d3b7a!important;font-size:clamp(16px,1.55vw,21px)!important;line-height:1.05!important;animation:float 3.2s ease-in-out infinite;margin:0 0 110px -40px!important}
+.siren .bubble b{color:#a3101c!important}
+.siren .bubble:after{content:""!important;position:absolute;left:-12px!important;top:auto!important;bottom:8px!important;transform:none!important;width:16px;height:16px;border-radius:50%;border:2px solid rgba(13,59,122,.3)!important;background:rgba(200,240,255,.35)}
+.siren .bubble:before{content:"";position:absolute;left:-24px;bottom:-6px;width:9px;height:9px;border-radius:50%;border:2px solid rgba(13,59,122,.3);background:rgba(200,240,255,.35)}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -6px}}
+.how.siren.react{flex:none!important;margin-top:2px}
+.how.siren.react .mermaid{width:clamp(92px,8.8vw,116px)}
+.how.siren.react .mermaid.lying{margin:-34px 0 -30px}
+.panel.res .passnote{margin-top:-2px}
+.how.siren.react .bubble{width:clamp(100px,9.4vw,122px);margin:0 0 50px -24px!important;font-size:clamp(15px,1.4vw,19px)!important}
+.panel.res .scorebox{flex:none!important}
+.panel.res .score{font-size:clamp(54px,5.8vw,76px)!important}
+.panel.res .scorebox:before{width:150px!important;height:150px!important}
 </style>
 </head>
 <body>
+<div class="sea"><i></i><i></i></div>
 <div class="smiles" id="smiles"></div>
 <div class="app">
- <div class="awning"></div>
- <div class="flags"></div>
+ <div class="meander"></div>
  <header>
-  <div class="club" id="club"></div>
   <h1 id="title"></h1>
   <div class="sub" id="sub"></div>
-  <div class="burst b1">웃음<br>무료!</div>
-  <div class="burst b2">대박<br>기원</div>
+  <svg class="ship l" viewBox="0 0 120 80" aria-hidden="true"><path d="M58 6v50" stroke="#5a3d0c" stroke-width="3"/><path d="M60 10c16 6 24 18 24 34H60z" fill="#fff6d6" stroke="#c99a3c" stroke-width="2"/><path d="M56 14c-12 6-18 16-18 30h18z" fill="#f2cf6b" stroke="#c99a3c" stroke-width="2"/><path d="M60 4l12 4-12 4z" fill="#e8202a"/><path d="M14 56h92l-12 16H28z" fill="#8a5a2e" stroke="#5a3d0c" stroke-width="2.5"/><g fill="#f7e3a1"><circle cx="40" cy="63" r="3"/><circle cx="54" cy="63" r="3"/><circle cx="68" cy="63" r="3"/><circle cx="82" cy="63" r="3"/></g><path d="M6 74q10-6 20 0t20 0 20 0 20 0 20 0 20 0" fill="none" stroke="#d9f3ff" stroke-width="2.5"/></svg>
+  <svg class="ship r" viewBox="0 0 120 80" aria-hidden="true"><path d="M58 6v50" stroke="#5a3d0c" stroke-width="3"/><path d="M60 10c16 6 24 18 24 34H60z" fill="#fff6d6" stroke="#c99a3c" stroke-width="2"/><path d="M56 14c-12 6-18 16-18 30h18z" fill="#f2cf6b" stroke="#c99a3c" stroke-width="2"/><path d="M60 4l12 4-12 4z" fill="#e8202a"/><path d="M14 56h92l-12 16H28z" fill="#8a5a2e" stroke="#5a3d0c" stroke-width="2.5"/><g fill="#f7e3a1"><circle cx="40" cy="63" r="3"/><circle cx="54" cy="63" r="3"/><circle cx="68" cy="63" r="3"/><circle cx="82" cy="63" r="3"/></g><path d="M6 74q10-6 20 0t20 0 20 0 20 0 20 0 20 0" fill="none" stroke="#d9f3ff" stroke-width="2.5"/></svg>
  </header>
  <main>
+  <aside class="scroll" aria-label="미션 안내">
+   <div class="sc-top"></div>
+   <div class="sc-body">
+    <div class="sc-ico" id="scSiren"></div>
+    <div class="sc-name" id="scName">세이렌의 섬</div>
+    <div class="sc-line">웃음으로<br>세이렌을<br>이겨라!</div>
+    <div class="sc-pass"><b id="scPass">70</b>점<br>통과</div>
+   </div>
+   <div class="sc-bot"></div>
+  </aside>
   <section class="panel">
    <div class="ptitle"><b>1</b>화면을 보고 활짝 웃어 보세요</div>
    <div class="stage" id="stage">
     <video id="video" playsinline muted autoplay></video>
     <canvas class="still hidden" id="still"></canvas>
     <div class="camhint" id="camHint">카메라를 켜는 중이에요…</div>
+    <div class="mic" id="mic" aria-hidden="true"><i class="ring" id="micRing"></i><svg viewBox="0 0 80 150"><defs><linearGradient id="mg" x1="0" x2="1"><stop offset="0" stop-color="#9aa3ad"/><stop offset=".45" stop-color="#f4f6f8"/><stop offset="1" stop-color="#7d8792"/></linearGradient><radialGradient id="mh" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#e9edf1"/><stop offset=".6" stop-color="#8f99a3"/><stop offset="1" stop-color="#4a535c"/></radialGradient><pattern id="mesh" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.3" fill="#3a424a"/></pattern></defs><rect x="28" y="60" width="24" height="88" rx="10" fill="#1d1f22"/><rect x="24" y="54" width="32" height="16" rx="4" fill="url(#mg)"/><rect x="32" y="96" width="16" height="6" rx="2" fill="#d4a83a"/><circle cx="40" cy="30" r="28" fill="url(#mh)"/><circle cx="40" cy="30" r="28" fill="url(#mesh)" opacity=".55"/><circle cx="40" cy="30" r="27" fill="none" stroke="#3a424a" stroke-width="2"/><ellipse cx="31" cy="18" rx="8" ry="5" fill="#fff" opacity=".55"/></svg></div>
     <div class="count" id="count"></div>
     <div class="measure" id="measure"><div class="lab">하하하~ 웃어요! 😆</div><div class="bar"><i id="mbar"></i></div></div>
     <div class="flash" id="flash"></div>
    </div>
   </section>
   <section class="panel">
+   <div class="club" id="club"></div>
    <div class="ptitle" id="rtitle"><b>2</b>웃음 측정기</div>
    <div class="tries" id="tries"></div>
    <div class="gauges">
     <div class="g face"><div class="gl">😊 활짝 웃는 얼굴 <span id="fv">0%</span></div><div class="gb"><i id="fbar"></i></div></div>
     <div class="g voice"><div class="gl">🔊 웃음 소리 <span id="vv">0%</span></div><div class="gb"><i id="vbar"></i></div></div>
    </div>
-   <div class="how" id="how">
-    <div class="story" id="story"></div>
-    <ol>
-     <li>[웃음 측정 시작]을 눌러요.</li>
-     <li>"하나, 둘, 셋, 스마일~" 소리가 끝나면</li>
-     <li><b>2초 동안</b> 활짝 웃으며 "하하하!" 크게 웃어요.</li>
-     <li>통과하면 <b>미션 여권에 도장</b>을 받아요!</li>
-    </ol>
-    <div class="pass" id="passInfo"></div>
-    <div class="staff">📣 진행자: 도전자와 함께 "하하하!" 크게 외쳐 주세요</div>
-   </div>
    <div class="scorebox hidden" id="result">
     <div class="score" id="score">0<small>점</small></div>
     <div class="stamp" id="stamp">미션 통과!</div>
     <div class="msg" id="msg"></div>
-    <div class="passnote hidden" id="passNote">🎉 미션 여권에 도장 받으세요!</div>
+    <div class="passnote hidden" id="passNote">⚓ 항해 여권에 도장 받으세요!</div>
+   </div>
+   <div class="how siren" id="how">
+    <div class="mermaid" id="siren"></div>
+    <div class="bubble" id="sirenSay"></div>
+    <span class="story hidden" id="story"></span><span class="hidden" id="passInfo"></span>
    </div>
    <div class="board" id="board"></div>
    <div class="hint" id="hint"></div>
    <div id="actions" style="display:flex;flex-direction:column;gap:10px;margin-top:6px">
-    <button type="button" class="btn" id="startBtn">😄 웃음 측정 시작</button>
+    <button type="button" class="btn" id="startBtn">⛵ 웃음 측정 시작</button>
     <div class="row hidden" id="after">
-     <button type="button" class="btn" id="printBtn" style="flex:1.3">인증서 출력</button>
+     <button type="button" class="btn hidden" id="printBtn" style="flex:1.3">인증서 출력</button>
      <button type="button" class="btn sec" id="againBtn" style="flex:1">다시 도전</button>
     </div>
     <button type="button" class="btn sec hidden" id="nextBtn">👉 다음 도전자 차례!</button>
@@ -220,8 +301,8 @@ var TITLE        = '당신의 웃음을 보여주세요!';
 var SUBTITLE     = '웃음으로 세이렌을 이겨라! <b>70점 이상 통과</b>';
 var PASS_SCORE   = 70;          // 이 점수 이상이면 '미션 통과'
 var MEASURE_SEC  = 2;           // 웃음을 재는 시간(초)
-var FACE_WEIGHT  = 0.65;        // 얼굴 웃음 비중 (나머지는 소리)
-var VOICE_WEIGHT = 0.35;        // 웃음 소리 비중
+var FACE_WEIGHT  = 0.55;        // 얼굴 웃음 비중 (나머지는 소리)
+var VOICE_WEIGHT = 0.45;        // 웃음 소리 비중 (높을수록 크게 웃어야 통과)
 /* 점수표: 계산한 값(0~100)이 [기준] 이상이면 [점수]를 줘요. 위에서부터 차례로 봐요. */
 var SCORE_TABLE = [
  [85,100],
@@ -241,8 +322,8 @@ var SCORE_MSG = {
  0:  ['2026 피곤 인정, 2027 충전!','웃음 배터리 0%, 2027 충전!']
 };
 var MSG_TAIL = '';   // 문구 뒤에 붙일 말 (예: ' 😆')
-var VOICE_SENS    = 30;         // 소리 감도: 주변 소음보다 몇 dB 더 크면 100%인지 (작을수록 쉽게 100%)
-var PRINT_ON      = true;       // 인증서 출력 버튼 보이기
+var VOICE_SENS    = 38;         // 소리 감도: 주변 소음보다 몇 dB 더 크면 100%인지 (작을수록 쉽게 100%, 클수록 어려움)
+var PRINT_ON      = false;      // 인증서 출력 버튼 (사용 안 함)
 var EVENT_NAME    = '관문 통과';             // 인증서 제목 (미션 이름 뒤에 붙어요)
 var RECEIPT_FOOTER= '';                      // 인증서 맨 아래 한 줄 (예: '○○고등학교 축제')
 var AUTO_HOME_SEC = 40;         // 결과 화면에서 이 시간(초)이 지나면 처음으로
@@ -257,9 +338,9 @@ var FEED_LINES = 1;
 
 function $(id){return document.getElementById(id);}
 var DEMO=/[?&]demo/.test(location.search);   // 주소 끝에 ?demo 를 붙이면 카메라 없이 연습 모드
-$('title').textContent=TITLE;$('story').textContent='🧜 '+MISSION_STORY;if(CLUB_LINE)$('club').innerHTML='<span>'+CLUB_LINE.replace(/</g,'&lt;')+'</span>';$('sub').innerHTML=SUBTITLE;$('passInfo').textContent='★ '+PASS_SCORE+'점 이상이면 미션 통과! 도장 받으러 가요~';
+$('title').textContent=TITLE;$('scName').textContent=MISSION_NAME;$('scPass').textContent=PASS_SCORE;$('story').textContent='🧜‍♀️ '+MISSION_STORY;if(CLUB_LINE)$('club').innerHTML='<span>'+CLUB_LINE.replace(/</g,'&lt;')+'</span>';$('sub').innerHTML=SUBTITLE;$('passInfo').textContent='⭐ '+PASS_SCORE+'점 이상이면 세이렌의 섬 통과!';
 if(!PRINT_ON)$('printBtn').classList.add('hidden');
-(function(){var s=$('smiles'),h='',e=['😄','😆','😊','🤣','💛','✨'];for(var i=0;i<18;i++){h+='<i style="left:'+(Math.random()*100).toFixed(1)+'%;font-size:'+(22+Math.random()*26).toFixed(0)+'px;animation-duration:'+(12+Math.random()*12).toFixed(1)+'s;animation-delay:'+(-Math.random()*20).toFixed(1)+'s">'+e[i%e.length]+'</i>';}s.innerHTML=h;})();
+(function(){var s=$('smiles'),h='',e=['','','','',''];for(var i=0;i<18;i++){h+='<i style="left:'+(Math.random()*100).toFixed(1)+'%;width:'+(10+Math.random()*26).toFixed(0)+'px;aspect-ratio:1;animation-duration:'+(12+Math.random()*12).toFixed(1)+'s;animation-delay:'+(-Math.random()*20).toFixed(1)+'s">'+e[i%e.length]+'</i>';}s.innerHTML=h;})();
 
 /* ---------------- 카메라 · 마이크 ---------------- */
 var stream=null,video=$('video'),actx=null,analyser=null,micBuf=null,hasMic=false;
@@ -272,7 +353,7 @@ function startCamera(){
   .then(function(s){hasMic=true;go(s);})
   .catch(function(){navigator.mediaDevices.getUserMedia({video:v}).then(function(s){hasMic=false;go(s);}).catch(function(err){$('camHint').textContent='카메라를 켤 수 없어요. 카메라 권한을 허용해 주세요.';});});
  function go(s){stream=s;video.srcObject=s;var p=video.play();if(p&&p.catch)p.catch(function(){});
-  $('camHint').textContent=hasMic?'얼굴이 화면 가운데 오게 서 주세요':'마이크가 꺼져 있어 얼굴 웃음만으로 점수를 매겨요';
+  $('camHint').textContent=hasMic?'얼굴이 화면 가운데 오게 서 주세요':'마이크가 꺼져 있어 얼굴 웃음만으로 점수를 매겨요';if(!hasMic)$('mic').classList.add('off');
   if(hasMic)setupMic(s);initFace();}
 }
 function setupMic(s){try{var c=audioCtx();var src=c.createMediaStreamSource(new MediaStream(s.getAudioTracks()));analyser=c.createAnalyser();analyser.fftSize=1024;micBuf=new Float32Array(analyser.fftSize);src.connect(analyser);}catch(e){hasMic=false;}}
@@ -304,12 +385,12 @@ function readFace(){   // 0~1 활짝 웃는 정도. 얼굴이 없으면 -1
 function readVoice(base){   // 0~1 웃음 소리 크기 (주변 소음보다 얼마나 큰지)
  if(DEMO)return 0.2+0.75*Math.abs(Math.sin(Date.now()/600));
  if(!hasMic)return 0;
- return Math.max(0,Math.min(1,(micDb()-(base+3))/VOICE_SENS));
+ return Math.max(0,Math.min(1,(micDb()-(base+6))/VOICE_SENS));
 }
 
 /* ---------------- 실시간 게이지 ---------------- */
 var noiseBase=-60,live=true;
-function setGauge(f,v){f=Math.max(0,f);$('fbar').style.width=(f*100).toFixed(0)+'%';$('fv').textContent=Math.round(f*100)+'%';$('vbar').style.width=(v*100).toFixed(0)+'%';$('vv').textContent=hasMic||DEMO?Math.round(v*100)+'%':'꺼짐';}
+function setGauge(f,v){var mr=document.getElementById('micRing');if(mr)mr.style.setProperty('--lv',(0.6+v*1.6).toFixed(2));f=Math.max(0,f);$('fbar').style.width=(f*100).toFixed(0)+'%';$('fv').textContent=Math.round(f*100)+'%';$('vbar').style.width=(v*100).toFixed(0)+'%';$('vv').textContent=hasMic||DEMO?Math.round(v*100)+'%':'꺼짐';}
 (function loop(){
  if(live){var f=readFace(),v=readVoice(noiseBase);setGauge(f,v);
   if(!DEMO&&hasMic){var d=micDb();noiseBase=noiseBase*0.98+Math.min(d,noiseBase+6)*0.02;}}   // 주변 소음을 천천히 따라감
@@ -326,6 +407,55 @@ document.addEventListener('pointerdown',function(){audioCtx();loadVoice();},{onc
 
 /* ---------------- 측정 ---------------- */
 var busy=false,state={photo:null,score:0,face:0,voice:0,receipt:null,msg:''},homeTimer=null;
+/* ---------------- 세이렌 캐릭터 (표정이 바뀌어요) ---------------- */
+var SIREN_SAY = {   // 점수에 따른 세이렌의 말
+ idle:'하하하!<br>크게 웃어서<br><b>나를 이겨 봐~</b>',
+ live1:'흥~<br>그 정도로는<br><b>어림없지!</b>',
+ live2:'어? 어?<br><b>제법인데…?</b>',
+ 0:'호호호~<br>내 노래가<br><b>이겼지롱!</b>',
+ 20:'흥!<br>그 정도로는<br><b>어림없어~</b>',
+ 50:'어머…<br>조금<br><b>무서운데?</b>',
+ 70:'으앙…<br><b>내가 졌어…</b>',
+ 90:'흑흑…<br>웃음소리에<br><b>귀가 아파~</b>',
+ 100:'기절…<br><b>웃음왕<br>인정!</b>',
+ noFace:'어디 숨었어?<br><b>얼굴 좀<br>보여 줘~</b>'
+};
+var SIREN_MOOD = {0:'gloat',20:'smug',50:'worried',70:'sad',90:'cry',100:'faint'};
+var SIREN_FACE = {
+ idle:'<ellipse cx="86" cy="82" rx="4.5" ry="6" fill="#3a2440"/><ellipse cx="114" cy="82" rx="4.5" ry="6" fill="#3a2440"/><circle cx="87.5" cy="79.5" r="1.6" fill="#fff"/><circle cx="115.5" cy="79.5" r="1.6" fill="#fff"/><path d="M91 95 Q100 104 109 95" fill="none" stroke="#7a1f3d" stroke-width="3" stroke-linecap="round"/>',
+ smug:'<path d="M78 73 L92 71" stroke="#5a2a6e" stroke-width="2.5" stroke-linecap="round"/><path d="M108 70 L122 66" stroke="#5a2a6e" stroke-width="2.5" stroke-linecap="round"/><path d="M80 83 Q86 78 92 83" fill="none" stroke="#3a2440" stroke-width="3" stroke-linecap="round"/><ellipse cx="114" cy="81" rx="4.5" ry="6" fill="#3a2440"/><circle cx="115.5" cy="78.5" r="1.6" fill="#fff"/><path d="M90 98 Q101 103 111 93" fill="none" stroke="#7a1f3d" stroke-width="3" stroke-linecap="round"/>',
+ gloat:'<path d="M79 84 Q86 75 93 84" fill="none" stroke="#3a2440" stroke-width="3.2" stroke-linecap="round"/><path d="M107 84 Q114 75 121 84" fill="none" stroke="#3a2440" stroke-width="3.2" stroke-linecap="round"/><path d="M87 93 Q100 114 113 93Z" fill="#7a1f3d"/><path d="M93 103 Q100 108 107 103 Q100 99 93 103Z" fill="#ff7aa2"/>',
+ worried:'<path d="M78 75 L92 70" stroke="#5a2a6e" stroke-width="2.5" stroke-linecap="round"/><path d="M122 75 L108 70" stroke="#5a2a6e" stroke-width="2.5" stroke-linecap="round"/><ellipse cx="86" cy="83" rx="4" ry="5.5" fill="#3a2440"/><ellipse cx="114" cy="83" rx="4" ry="5.5" fill="#3a2440"/><path d="M89 100 Q94.5 95 100 100 Q105.5 105 111 100" fill="none" stroke="#7a1f3d" stroke-width="3" stroke-linecap="round"/><path d="M138 62 Q132 72 138 76 Q144 72 138 62Z" fill="#7fd0ff" stroke="#3a8fd0" stroke-width="1.2"/>',
+ sad:'<path d="M78 74 L92 70" stroke="#5a2a6e" stroke-width="2.5" stroke-linecap="round"/><path d="M122 74 L108 70" stroke="#5a2a6e" stroke-width="2.5" stroke-linecap="round"/><path d="M80 81 Q86 87 92 81" fill="none" stroke="#3a2440" stroke-width="3" stroke-linecap="round"/><path d="M108 81 Q114 87 120 81" fill="none" stroke="#3a2440" stroke-width="3" stroke-linecap="round"/><path d="M91 103 Q100 95 109 103" fill="none" stroke="#7a1f3d" stroke-width="3" stroke-linecap="round"/><g class="tear"><path d="M84 88 Q80 96 84 99 Q88 96 84 88Z" fill="#7fd0ff"/><path d="M116 88 Q112 96 116 99 Q120 96 116 88Z" fill="#7fd0ff"/></g>',
+ cry:'<path d="M80 78 L91 83 L80 88" fill="none" stroke="#3a2440" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M120 78 L109 83 L120 88" fill="none" stroke="#3a2440" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="100" cy="101" rx="8" ry="7" fill="#7a1f3d"/><g class="tear"><path d="M80 89 Q74 104 78 118" fill="none" stroke="#7fd0ff" stroke-width="5" stroke-linecap="round"/><path d="M120 89 Q126 104 122 118" fill="none" stroke="#7fd0ff" stroke-width="5" stroke-linecap="round"/></g>',
+ faint:'<path d="M81 77 L91 87 M91 77 L81 87" stroke="#3a2440" stroke-width="3" stroke-linecap="round"/><path d="M109 77 L119 87 M119 77 L109 87" stroke="#3a2440" stroke-width="3" stroke-linecap="round"/><ellipse cx="100" cy="100" rx="5" ry="6" fill="#7a1f3d"/><g class="stars"><path d="M70 40l3 6 6 1-5 4 1 6-5-3-5 3 1-6-5-4 6-1z" fill="#ffd23f"/><path d="M128 34l3 6 6 1-5 4 1 6-5-3-5 3 1-6-5-4 6-1z" fill="#ffd23f"/><path d="M100 22l2.4 5 5 .8-3.8 3.4 1 5-4.6-2.6-4.6 2.6 1-5-3.8-3.4 5-.8z" fill="#ffd23f"/></g>'
+};
+function sirenSVG(mood){
+ return '<svg viewBox="0 0 200 260" aria-hidden="true"><defs><linearGradient id="sTail" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6fd3c7"/><stop offset=".55" stop-color="#5aa7e6"/><stop offset="1" stop-color="#a36be0"/></linearGradient>'+
+ '<linearGradient id="sHair" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c26be0"/><stop offset="1" stop-color="#7a4ad0"/></linearGradient></defs>'+
+ '<path d="M46 78 C40 40 70 22 100 22 C132 22 160 40 154 80 C160 120 150 160 170 192 C142 188 128 162 124 140 L76 140 C72 162 58 188 30 192 C50 160 40 120 46 78Z" fill="url(#sHair)"/>'+
+ '<path d="M74 166 Q70 214 118 226 Q148 232 160 212 Q130 216 118 200 Q108 184 128 166Z" fill="url(#sTail)" stroke="#3d6fae" stroke-width="2"/>'+
+ '<g fill="none" stroke="#e9fbff" stroke-width="1.6" opacity=".7"><path d="M84 180 q6 6 12 0 q6 6 12 0"/><path d="M90 196 q6 6 12 0 q6 6 12 0"/><path d="M104 210 q6 6 12 0"/></g>'+
+ '<path d="M156 212 Q186 190 194 214 Q180 214 172 222 Q184 238 166 246 Q160 230 150 220Z" fill="#a36be0" stroke="#3d6fae" stroke-width="2"/>'+
+ '<path d="M77 120 Q100 112 123 120 L127 168 Q100 176 73 168Z" fill="#ffdcb8"/>'+
+ '<path d="M78 124 Q60 150 68 172" fill="none" stroke="#ffdcb8" stroke-width="10" stroke-linecap="round"/>'+
+ '<path d="M122 124 Q146 116 150 90" fill="none" stroke="#ffdcb8" stroke-width="10" stroke-linecap="round"/>'+
+ '<g fill="#ff8fb7" stroke="#d9477f" stroke-width="1.5"><path d="M78 140 Q88 124 98 140Z"/><path d="M102 140 Q112 124 122 140Z"/></g>'+
+ '<rect x="92" y="104" width="16" height="16" fill="#ffdcb8"/>'+
+ '<circle cx="100" cy="78" r="38" fill="#ffdcb8"/>'+
+ '<path d="M62 78 Q64 40 100 38 Q136 40 138 78 Q124 58 108 62 Q100 50 92 62 Q76 58 62 78Z" fill="url(#sHair)"/>'+
+ '<path d="M130 46l3 6 6 1-5 4 1 6-5-3-5 3 1-6-5-4 6-1z" fill="#ffd23f" stroke="#c99a2e" stroke-width="1"/>'+
+ '<ellipse cx="79" cy="93" rx="7" ry="4" fill="#ff8fb7" opacity=".55"/><ellipse cx="121" cy="93" rx="7" ry="4" fill="#ff8fb7" opacity=".55"/>'+
+ (SIREN_FACE[mood]||SIREN_FACE.idle)+'</svg>';
+}
+var sirenMood='';
+function setSiren(mood,say){
+ var el=$('siren');if(!el)return;
+ if(mood!==sirenMood){el.innerHTML=sirenSVG(mood);sirenMood=mood;}
+ el.classList.toggle('lying',mood==='sad'||mood==='cry'||mood==='faint');
+ if(say!=null)$('sirenSay').innerHTML=say;
+}
+
 var tries=0,personPassed=false;
 function todayKey(){var d=new Date();return 'smileBoard-'+d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();}
 function loadBoard(){try{return JSON.parse(localStorage.getItem(todayKey())||'null')||{people:0,pass:0,hundred:0,best:0};}catch(e){return {people:0,pass:0,hundred:0,best:0};}}
@@ -354,7 +484,7 @@ function measure(){
  (function step(){
   var el=performance.now()-t0,f=readFace(),v=readVoice(base);frames++;
   if(f>=0){seen++;faces.push(f);if(f>best){best=f;bestShot=grab();}}
-  voices.push(v);setGauge(f,v);$('mbar').style.width=Math.min(100,el/dur*100)+'%';
+  voices.push(v);setGauge(f,v);var lv=Math.max(0,f)*FACE_WEIGHT+v*VOICE_WEIGHT;if(lv>.55)setSiren('worried',SIREN_SAY.live2);else setSiren('smug',SIREN_SAY.live1);$('mbar').style.width=Math.min(100,el/dur*100)+'%';
   if(el<dur){requestAnimationFrame(step);return;}
   $('measure').classList.remove('on');$('mbar').style.width='0';
   if(!playPart(CUE.shutter,CUE.shutter+0.18)){}
@@ -364,7 +494,7 @@ function measure(){
 }
 function topMean(a,frac){if(!a.length)return 0;var b=a.slice().sort(function(x,y){return y-x;});var n=Math.max(1,Math.round(b.length*frac));var s=0;for(var i=0;i<n;i++)s+=b[i];return s/n;}
 function finish(faces,voices,seenRatio,shot){
- var face=topMean(faces,0.6),voice=topMean(voices,0.5);
+ var face=topMean(faces,0.6),voice=topMean(voices,0.4);
  var fw=FACE_WEIGHT,vw=VOICE_WEIGHT;if(!hasMic&&!DEMO){fw=1;vw=0;}
  var raw=(face*fw+voice*vw)/(fw+vw)*100;
  if(seenRatio<0.3)raw=Math.min(raw,8);   // 얼굴이 거의 안 보이면 0점
@@ -378,7 +508,8 @@ function grab(){var c=document.createElement('canvas');var vw=DEMO?640:video.vid
 function showResult(){
  var s=state.score,pass=s>=PASS_SCORE;
  var st=$('still');if(state.photo){st.width=state.photo.width;st.height=state.photo.height;st.getContext('2d').drawImage(state.photo,0,0);st.classList.remove('hidden');}
- $('how').classList.add('hidden');$('result').classList.remove('hidden');$('result').closest('.panel').classList.add('res');$('rtitle').innerHTML='<b>3</b>나의 웃음 점수';
+ $('mic').classList.add('hidden');$('how').classList.add('react');$('result').classList.remove('hidden');$('result').closest('.panel').classList.add('res');$('rtitle').innerHTML='<b>3</b>나의 웃음 점수';
+ setSiren(state.noFace?'smug':(SIREN_MOOD[s]||'idle'),state.noFace?SIREN_SAY.noFace:(SIREN_SAY[s]||''));
  $('stamp').textContent=pass?'미션 통과!':'아쉬워요! 다시 도전';$('stamp').classList.toggle('fail',!pass);
  $('msg').textContent=state.noFace?'얼굴이 안 보여요, 다시 도전!':state.msg;
  setGauge(state.face,state.voice);
@@ -389,12 +520,12 @@ function showResult(){
  if(pass){$('stamp').textContent=MISSION_NAME+' 통과!';$('againBtn').classList.add('hidden');$('nextBtn').classList.remove('hidden');$('passNote').classList.remove('hidden');}
  else if(left>0){$('stamp').textContent='아쉬워요! 남은 기회 '+left+'번';$('againBtn').classList.remove('hidden');$('againBtn').textContent='다시 도전 ('+left+'번)';$('nextBtn').classList.add('hidden');}
  else{$('stamp').textContent='기회 끝! 다음에 또 와요';$('againBtn').classList.add('hidden');$('nextBtn').classList.remove('hidden');}
- state.receipt=null;try{state.receipt=drawReceipt();}catch(e){}
+ state.receipt=null;if(PRINT_ON){try{state.receipt=drawReceipt();}catch(e){}}
  homeTimer=setTimeout(function(){reset();newPerson();},AUTO_HOME_SEC*1000);
 }
 function confetti(){var c=$('confetti'),h='',cols=['#ff4f8b','#ffd23f','#ff8a1f','#18a058','#2f7de1','#a66cff'];for(var i=0;i<70;i++)h+='<i style="left:'+(Math.random()*100).toFixed(1)+'%;background:'+cols[i%6]+';--dx:'+((Math.random()-.5)*200).toFixed(0)+'px;animation-duration:'+(2.2+Math.random()*2).toFixed(1)+'s;animation-delay:'+(Math.random()*.6).toFixed(2)+'s"></i>';c.innerHTML=h;setTimeout(function(){c.innerHTML='';},5000);}
 function reset(){
- clearTimeout(homeTimer);live=true;$('result').closest('.panel').classList.remove('res');$('still').classList.add('hidden');$('how').classList.remove('hidden');$('result').classList.add('hidden');
+ clearTimeout(homeTimer);live=true;$('mic').classList.remove('hidden');$('how').classList.remove('react');setSiren('idle',SIREN_SAY.idle);$('result').closest('.panel').classList.remove('res');$('still').classList.add('hidden');$('how').classList.remove('hidden');$('result').classList.add('hidden');
  $('passNote').classList.add('hidden');$('rtitle').innerHTML='<b>2</b>웃음 측정기';$('startBtn').classList.remove('hidden');$('after').classList.add('hidden');$('nextBtn').classList.add('hidden');$('againBtn').classList.remove('hidden');$('againBtn').textContent='다시 도전';$('hint').textContent='';
  var old=$('altLink');if(old)old.remove();state={photo:null,score:0,face:0,voice:0,receipt:null};
 }
@@ -561,7 +692,7 @@ function printInNewWindow(url,css,hint){
  w.document.close();
 }
 
-newPerson();drawBoard();
+newPerson();drawBoard();setSiren('idle',SIREN_SAY.idle);$('scSiren').innerHTML=sirenSVG('idle');
 startCamera();
 </script>
 </body>
