@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>당신의 웃음을 보여주세요</title>
-<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Jua&family=Do+Hyeon&family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Black+Han+Sans&family=Jua&family=Do+Hyeon&family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#fff7d6;--ink:#2b2118;--muted:#7a5a3a;--pink:#ff4f8b;--orange:#ff8a1f;--yellow:#ffd23f;--green:#18a058;--blue:#2f7de1;--line:#f3dfa4;
  --cute:'Jua','Noto Sans KR',sans-serif;--gothic:'Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','Noto Sans KR',sans-serif}
@@ -66,12 +66,95 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.55fr) min
 .smiles i{position:absolute;bottom:-60px;font-style:normal;animation:up linear infinite;opacity:.55}
 @keyframes up{0%{transform:translateY(0) rotate(-10deg)}50%{transform:translate(14px,-60vh) rotate(8deg)}100%{transform:translateY(-125vh) rotate(-6deg)}}
 #printArea{display:none}
+.tries{position:absolute;right:22px;top:16px;font-family:'Do Hyeon',sans-serif;font-size:clamp(17px,1.7vw,22px);background:#1b1b1b;color:#ffdf3d;border-radius:999px;padding:3px 14px}
+.panel{position:relative}
+.story{font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:clamp(17px,1.7vw,22px);color:#1e3a8a;margin-bottom:6px}
+.staff{margin-top:6px;color:#555;font-size:.92em}
+.board{display:flex;gap:8px;justify-content:center;margin-top:8px;font-family:'Do Hyeon',sans-serif;font-size:clamp(15px,1.5vw,19px)}
+.board span{background:#fff4c2;border:2px solid #1b1b1b;border-radius:10px;padding:2px 10px;white-space:nowrap}
+.board b{color:#e8202a;font-weight:400}
+.passnote{font-family:'Black Han Sans',sans-serif;font-size:clamp(20px,2vw,26px);color:#1e3a8a}
+/* ===== 시장 축제 분위기 ===== */
+body{background:#ffdf3d!important;background-image:radial-gradient(circle,#ffeb7a 2px,transparent 2.5px)!important;background-size:22px 22px!important}
+.app{padding:0 16px 14px!important;gap:8px!important}
+.awning{height:30px;margin:0 -16px;flex:none;background:repeating-linear-gradient(90deg,#e8202a 0 46px,#fff 46px 92px);
+ -webkit-mask:radial-gradient(circle at 23px 30px,transparent 0 0) ,linear-gradient(#000,#000);
+ border-bottom:4px solid #1b1b1b;position:relative}
+.awning:after{content:"";position:absolute;left:0;right:0;bottom:-18px;height:18px;
+ background:radial-gradient(circle at 23px 0,#e8202a 0 22px,transparent 23px) 0 0/92px 18px repeat-x,radial-gradient(circle at 69px 0,#fff 0 22px,transparent 23px) 0 0/92px 18px repeat-x}
+.flags{height:34px;margin:14px -16px 0;flex:none;background:
+ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='34'%3E%3Cpath d='M0 4 Q75 14 150 4' fill='none' stroke='%231b1b1b' stroke-width='2'/%3E%3Cpath d='M8 6l14 24 14-22z' fill='%23e8202a'/%3E%3Cpath d='M44 9l14 24 14-24z' fill='%231e88e5'/%3E%3Cpath d='M80 9l14 24 14-23z' fill='%2343a047'/%3E%3Cpath d='M116 7l14 24 14-25z' fill='%23ff8f00'/%3E%3C/svg%3E") repeat-x}
+header{position:relative;justify-content:center;flex-wrap:wrap;gap:4px 18px!important;margin-top:-4px}
+header .club{width:100%;text-align:center;font-family:'Do Hyeon',sans-serif;font-size:clamp(16px,1.7vw,22px);color:#fff;letter-spacing:.06em}
+header .club span{background:#1b1b1b;padding:3px 16px;border-radius:999px}
+header h1{font-family:'Black Han Sans','Do Hyeon',sans-serif!important;color:#e8202a!important;font-size:clamp(40px,5vw,66px)!important;
+ -webkit-text-stroke:3px #fff!important;text-shadow:4px 4px 0 #1b1b1b,0 0 0 #000!important;letter-spacing:.02em;transform:rotate(-1.5deg)}
+header .sub{font-family:'Do Hyeon',sans-serif;font-size:clamp(20px,2.1vw,28px)!important;color:#1b1b1b!important;background:#fff;border:3px solid #1b1b1b;border-radius:10px;padding:2px 14px;transform:rotate(1.5deg);box-shadow:3px 3px 0 #1b1b1b}
+header .sub b{color:#e8202a!important}
+.burst{position:absolute;top:-6px;width:96px;height:96px;display:flex;align-items:center;justify-content:center;text-align:center;
+ font-family:'Black Han Sans',sans-serif;font-size:21px;line-height:1.05;color:#fff;
+ background:#e8202a;clip-path:polygon(50% 0,61% 18%,80% 8%,79% 29%,100% 31%,87% 50%,100% 69%,79% 71%,80% 92%,61% 82%,50% 100%,39% 82%,20% 92%,21% 71%,0 69%,13% 50%,0 31%,21% 29%,20% 8%,39% 18%);animation:wob 1.6s ease-in-out infinite}
+.burst.b1{left:8px;transform:rotate(-12deg)}
+.burst.b2{right:8px;background:#1e88e5;animation-delay:.5s}
+@keyframes wob{0%,100%{scale:1}50%{scale:1.1}}
+.panel{background:#fff!important;border:4px solid #1b1b1b!important;border-radius:18px!important;box-shadow:7px 7px 0 #1b1b1b!important}
+.stage{border:3px solid #1b1b1b}
+.ptitle{font-family:'Do Hyeon',sans-serif}
+.ptitle b{background:#e8202a!important;border:2px solid #1b1b1b}
+.btn{background:#e8202a!important;border:3px solid #1b1b1b!important;box-shadow:5px 5px 0 #1b1b1b!important;font-family:'Black Han Sans',sans-serif!important;letter-spacing:.03em}
+.btn:active{transform:translate(3px,3px)!important;box-shadow:2px 2px 0 #1b1b1b!important}
+.btn:disabled{background:#f4a3a7!important}
+.btn.sec{background:#fff!important;color:#1b1b1b!important;font-family:'Do Hyeon',sans-serif!important}
+.g .gb{border:3px solid #1b1b1b!important;background:#fff4c2!important;height:30px!important}
+.g.face .gb i{background:repeating-linear-gradient(45deg,#ff8f00 0 14px,#ffb300 14px 28px)!important}
+.g.voice .gb i{background:repeating-linear-gradient(45deg,#1e88e5 0 14px,#42a5f5 14px 28px)!important}
+.g .gl{font-family:'Do Hyeon',sans-serif}
+.how{border:3px dashed #1b1b1b!important;background:#fffbe6!important}
+.score{font-family:'Black Han Sans',sans-serif!important;color:#e8202a!important;-webkit-text-stroke:4px #fff!important;text-shadow:6px 6px 0 #1b1b1b!important;position:relative}
+.scorebox{position:relative}
+.scorebox:before{content:"";position:absolute;left:50%;top:44%;width:330px;height:330px;transform:translate(-50%,-50%);z-index:0;
+ background:repeating-conic-gradient(#ffdf3d 0 10deg,#fff3a8 10deg 20deg);border-radius:50%;opacity:.9;animation:spin 14s linear infinite}
+.scorebox>*{position:relative;z-index:1}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.stamp{font-family:'Black Han Sans',sans-serif!important;border:3px solid #1b1b1b;box-shadow:4px 4px 0 #1b1b1b!important;background:#43a047!important}
+.stamp.fail{background:#9e9e9e!important}
+.msg{font-family:'Black Han Sans',sans-serif!important;font-size:clamp(24px,2.5vw,34px)!important;color:#1b1b1b;background:#fff;border:3px solid #1b1b1b;border-radius:14px;padding:6px 14px;box-shadow:4px 4px 0 #1b1b1b;transform:rotate(-1deg)}
+.count{-webkit-text-stroke:5px #1b1b1b!important;color:#ffdf3d!important;text-shadow:8px 8px 0 #e8202a!important;font-family:'Black Han Sans',sans-serif!important}
+
+/* 겹침 정리 */
+.burst{top:-58px!important;width:84px!important;height:84px!important;font-size:18px!important}
+header h1{font-size:clamp(36px,4.4vw,58px)!important}
+header .sub{font-size:clamp(17px,1.8vw,24px)!important}
+.how{overflow:auto;font-size:clamp(13px,1.25vw,16px)!important;line-height:1.45!important;padding:10px 12px!important}
+.story{font-size:clamp(15px,1.5vw,19px)!important}
+.score{font-size:clamp(86px,10vw,128px)!important}
+.scorebox{gap:8px!important}
+.scorebox:before{width:250px!important;height:250px!important}
+.msg{font-size:clamp(20px,2.1vw,28px)!important}
+.stamp{font-size:clamp(22px,2.3vw,30px)!important}
+.hint{min-height:0!important;margin-top:4px!important}
+.panel.res .hint{margin-top:14px!important}
+.panel.res .gauges{gap:6px!important;margin:0 0 4px!important}
+.panel.res .g .gb{height:16px!important;border-width:2px!important}
+.panel.res .g .gl{font-size:clamp(14px,1.4vw,18px)!important;margin-bottom:2px!important}
+.panel.res .board{display:none}
+.panel.res .scorebox{justify-content:flex-start!important;padding-top:0;gap:6px!important}
+.panel.res .score{font-size:clamp(76px,8.6vw,112px)!important}
+.passnote{font-size:clamp(16px,1.6vw,20px)!important}
 </style>
 </head>
 <body>
 <div class="smiles" id="smiles"></div>
 <div class="app">
- <header><h1 id="title"></h1><div class="sub" id="sub"></div></header>
+ <div class="awning"></div>
+ <div class="flags"></div>
+ <header>
+  <div class="club" id="club"></div>
+  <h1 id="title"></h1>
+  <div class="sub" id="sub"></div>
+  <div class="burst b1">웃음<br>무료!</div>
+  <div class="burst b2">대박<br>기원</div>
+ </header>
  <main>
   <section class="panel">
    <div class="ptitle"><b>1</b>화면을 보고 활짝 웃어 보세요</div>
@@ -86,24 +169,29 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.55fr) min
   </section>
   <section class="panel">
    <div class="ptitle" id="rtitle"><b>2</b>웃음 측정기</div>
+   <div class="tries" id="tries"></div>
    <div class="gauges">
     <div class="g face"><div class="gl">😊 활짝 웃는 얼굴 <span id="fv">0%</span></div><div class="gb"><i id="fbar"></i></div></div>
     <div class="g voice"><div class="gl">🔊 웃음 소리 <span id="vv">0%</span></div><div class="gb"><i id="vbar"></i></div></div>
    </div>
    <div class="how" id="how">
+    <div class="story" id="story"></div>
     <ol>
      <li>[웃음 측정 시작]을 눌러요.</li>
      <li>"하나, 둘, 셋, 스마일~" 소리가 끝나면</li>
      <li><b>2초 동안</b> 활짝 웃으며 "하하하!" 크게 웃어요.</li>
-     <li>얼굴 웃음과 웃음소리로 점수가 나와요.</li>
+     <li>통과하면 <b>미션 여권에 도장</b>을 받아요!</li>
     </ol>
     <div class="pass" id="passInfo"></div>
+    <div class="staff">📣 진행자: 도전자와 함께 "하하하!" 크게 외쳐 주세요</div>
    </div>
    <div class="scorebox hidden" id="result">
     <div class="score" id="score">0<small>점</small></div>
     <div class="stamp" id="stamp">미션 통과!</div>
     <div class="msg" id="msg"></div>
+    <div class="passnote hidden" id="passNote">🎉 미션 여권에 도장 받으세요!</div>
    </div>
+   <div class="board" id="board"></div>
    <div class="hint" id="hint"></div>
    <div id="actions" style="display:flex;flex-direction:column;gap:10px;margin-top:6px">
     <button type="button" class="btn" id="startBtn">😄 웃음 측정 시작</button>
@@ -111,6 +199,7 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.55fr) min
      <button type="button" class="btn" id="printBtn" style="flex:1.3">인증서 출력</button>
      <button type="button" class="btn sec" id="againBtn" style="flex:1">다시 도전</button>
     </div>
+    <button type="button" class="btn sec hidden" id="nextBtn">👉 다음 도전자 차례!</button>
    </div>
   </section>
  </main>
@@ -122,8 +211,13 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.55fr) min
 /* ================================================================
    웃음 점수 측정기 — 설정 (여기만 고치면 됩니다)
    ================================================================ */
+var CLUB_LINE    = '오디세우스의 귀향길 · 관문 ③ 세이렌의 섬';   // 맨 위 검은 띠 (비우면 안 보임)
+var MISSION_NAME = '세이렌의 섬';                 // 미션(관문) 이름 — 인증서·결과에 나와요
+var MISSION_STORY= '세이렌의 노래에 홀리지 않으려면 웃음소리로 이겨야 해요!';
+var MAX_TRIES    = 3;          // 한 사람당 도전 기회
+var SHOW_BOARD   = true;       // '오늘의 웃음 장부'(도전·통과·100점 수) 보이기
 var TITLE        = '당신의 웃음을 보여주세요!';
-var SUBTITLE     = '2초 웃음 미션 · <b>70점 이상 통과!</b>';
+var SUBTITLE     = '웃음으로 세이렌을 이겨라! <b>70점 이상 통과</b>';
 var PASS_SCORE   = 70;          // 이 점수 이상이면 '미션 통과'
 var MEASURE_SEC  = 2;           // 웃음을 재는 시간(초)
 var FACE_WEIGHT  = 0.65;        // 얼굴 웃음 비중 (나머지는 소리)
@@ -137,17 +231,19 @@ var SCORE_TABLE = [
  [10, 20],
  [0,   0]
 ];
+/* 점수별 결과 문구 (2026 수고 + 2027 많이 웃자). 여러 개면 그중 하나가 무작위로 나와요 */
 var SCORE_MSG = {
- 100:'웃음 천재 등장! 오늘의 웃음왕 👑',
- 90:'햇살 같은 웃음! 주변까지 환해졌어요 ☀️',
- 70:'기분 좋은 웃음! 미션 통과~ 🎉',
- 50:'살짝 웃었네요! 조금만 더 크게 웃어 볼까요?',
- 20:'수줍은 미소… 한 번 더 활짝 웃어 봐요!',
- 0:'웃음이 안 보였어요. 다시 도전해요!'
+ 100:['2026 웃음왕, 2027도 접수!','웃음 장인 등장, 2027 예약!'],
+ 90: ['버텨낸 2026, 2027은 꽃길!','2026 수고 만점, 2027 대박!'],
+ 70: ['수고했어 2026, 웃자 2027!','2026 졸업, 2027 웃음 개업!'],
+ 50: ['2026 반타작, 2027 풍년!','웃음 절반 성공, 2027 리필!'],
+ 20: ['아껴둔 웃음, 2027에 방출!','2026 미소 저축, 2027 인출!'],
+ 0:  ['2026 피곤 인정, 2027 충전!','웃음 배터리 0%, 2027 충전!']
 };
+var MSG_TAIL = '';   // 문구 뒤에 붙일 말 (예: ' 😆')
 var VOICE_SENS    = 30;         // 소리 감도: 주변 소음보다 몇 dB 더 크면 100%인지 (작을수록 쉽게 100%)
 var PRINT_ON      = true;       // 인증서 출력 버튼 보이기
-var EVENT_NAME    = '웃음 미션';             // 인증서 제목
+var EVENT_NAME    = '관문 통과';             // 인증서 제목 (미션 이름 뒤에 붙어요)
 var RECEIPT_FOOTER= '';                      // 인증서 맨 아래 한 줄 (예: '○○고등학교 축제')
 var AUTO_HOME_SEC = 40;         // 결과 화면에서 이 시간(초)이 지나면 처음으로
 var MY_VOICE      = true;       // 녹음한 '하나 둘 셋 스마일' 목소리 사용
@@ -161,7 +257,7 @@ var FEED_LINES = 1;
 
 function $(id){return document.getElementById(id);}
 var DEMO=/[?&]demo/.test(location.search);   // 주소 끝에 ?demo 를 붙이면 카메라 없이 연습 모드
-$('title').textContent=TITLE;$('sub').innerHTML=SUBTITLE;$('passInfo').textContent='★ '+PASS_SCORE+'점 이상이면 미션 통과!';
+$('title').textContent=TITLE;$('story').textContent='🧜 '+MISSION_STORY;if(CLUB_LINE)$('club').innerHTML='<span>'+CLUB_LINE.replace(/</g,'&lt;')+'</span>';$('sub').innerHTML=SUBTITLE;$('passInfo').textContent='★ '+PASS_SCORE+'점 이상이면 미션 통과! 도장 받으러 가요~';
 if(!PRINT_ON)$('printBtn').classList.add('hidden');
 (function(){var s=$('smiles'),h='',e=['😄','😆','😊','🤣','💛','✨'];for(var i=0;i<18;i++){h+='<i style="left:'+(Math.random()*100).toFixed(1)+'%;font-size:'+(22+Math.random()*26).toFixed(0)+'px;animation-duration:'+(12+Math.random()*12).toFixed(1)+'s;animation-delay:'+(-Math.random()*20).toFixed(1)+'s">'+e[i%e.length]+'</i>';}s.innerHTML=h;})();
 
@@ -229,7 +325,16 @@ function fanfare(good){var c=audioCtx();if(!c)return;var notes=good?[523,659,784
 document.addEventListener('pointerdown',function(){audioCtx();loadVoice();},{once:true});
 
 /* ---------------- 측정 ---------------- */
-var busy=false,state={photo:null,score:0,face:0,voice:0,receipt:null},homeTimer=null;
+var busy=false,state={photo:null,score:0,face:0,voice:0,receipt:null,msg:''},homeTimer=null;
+var tries=0,personPassed=false;
+function todayKey(){var d=new Date();return 'smileBoard-'+d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();}
+function loadBoard(){try{return JSON.parse(localStorage.getItem(todayKey())||'null')||{people:0,pass:0,hundred:0,best:0};}catch(e){return {people:0,pass:0,hundred:0,best:0};}}
+function saveBoard(b){try{localStorage.setItem(todayKey(),JSON.stringify(b));}catch(e){}}
+function drawBoard(){if(!SHOW_BOARD){$('board').classList.add('hidden');return;}var b=loadBoard();
+ $('board').innerHTML='<span>오늘 도전 <b>'+b.people+'</b>명</span><span>통과 <b>'+b.pass+'</b>명</span><span>100점 <b>'+b.hundred+'</b>번</span>';}
+function drawTries(){var h='';for(var i=0;i<MAX_TRIES;i++)h+=i<MAX_TRIES-tries?'●':'○';$('tries').textContent='도전 기회 '+h;}
+function newPerson(){tries=0;personPassed=false;drawTries();}
+function pickMsg(s){var m=SCORE_MSG[s];if(Array.isArray(m))m=m[Math.floor(Math.random()*m.length)];return (m||'')+MSG_TAIL;}
 function show(t,word){var c=$('count');c.textContent=t;c.classList.toggle('word',!!word);c.classList.remove('on');void c.offsetWidth;c.classList.add('on');}
 function at(sec,fn){setTimeout(fn,Math.max(0,sec*1000));}
 $('startBtn').onclick=function(){
@@ -242,6 +347,8 @@ $('startBtn').onclick=function(){
  },voiceBuf?0:300);
 };
 function measure(){
+ tries++;drawTries();
+ if(tries===1){var bd=loadBoard();bd.people++;saveBoard(bd);drawBoard();}
  var t0=performance.now(),dur=MEASURE_SEC*1000,faces=[],voices=[],best=-1,bestShot=null,base=noiseBase,seen=0,frames=0;
  $('measure').classList.add('on');live=false;
  (function step(){
@@ -262,7 +369,7 @@ function finish(faces,voices,seenRatio,shot){
  var raw=(face*fw+voice*vw)/(fw+vw)*100;
  if(seenRatio<0.3)raw=Math.min(raw,8);   // 얼굴이 거의 안 보이면 0점
  var score=0;for(var i=0;i<SCORE_TABLE.length;i++)if(raw>=SCORE_TABLE[i][0]){score=SCORE_TABLE[i][1];break;}
- state.face=face;state.voice=voice;state.score=score;state.photo=shot;state.noFace=seenRatio<0.3;
+ state.face=face;state.voice=voice;state.score=score;state.photo=shot;state.noFace=seenRatio<0.3;state.msg=pickMsg(score);
  showResult();
 }
 function grab(){var c=document.createElement('canvas');var vw=DEMO?640:video.videoWidth,vh=DEMO?480:video.videoHeight;if(!vw)return null;c.width=vw;c.height=vh;var x=c.getContext('2d');
@@ -271,22 +378,28 @@ function grab(){var c=document.createElement('canvas');var vw=DEMO?640:video.vid
 function showResult(){
  var s=state.score,pass=s>=PASS_SCORE;
  var st=$('still');if(state.photo){st.width=state.photo.width;st.height=state.photo.height;st.getContext('2d').drawImage(state.photo,0,0);st.classList.remove('hidden');}
- $('how').classList.add('hidden');$('result').classList.remove('hidden');$('rtitle').innerHTML='<b>3</b>나의 웃음 점수';
+ $('how').classList.add('hidden');$('result').classList.remove('hidden');$('result').closest('.panel').classList.add('res');$('rtitle').innerHTML='<b>3</b>나의 웃음 점수';
  $('stamp').textContent=pass?'미션 통과!':'아쉬워요! 다시 도전';$('stamp').classList.toggle('fail',!pass);
- $('msg').textContent=state.noFace?'얼굴이 잘 안 보였어요. 화면 가운데에서 다시 도전해요!':(SCORE_MSG[s]||'');
+ $('msg').textContent=state.noFace?'얼굴이 안 보여요, 다시 도전!':state.msg;
  setGauge(state.face,state.voice);
  var el=$('score'),n=0;(function up(){el.innerHTML=n+'<small>점</small>';if(n<s){n=Math.min(s,n+Math.max(1,Math.round(s/25)));setTimeout(up,30);}else{fanfare(pass);if(pass)confetti();}})();
  $('startBtn').classList.add('hidden');$('after').classList.remove('hidden');busy=false;$('startBtn').disabled=false;
+ var bd=loadBoard();if(pass&&!personPassed){bd.pass++;personPassed=true;}if(s===100)bd.hundred++;bd.best=Math.max(bd.best,s);saveBoard(bd);drawBoard();
+ var left=MAX_TRIES-tries;
+ if(pass){$('stamp').textContent=MISSION_NAME+' 통과!';$('againBtn').classList.add('hidden');$('nextBtn').classList.remove('hidden');$('passNote').classList.remove('hidden');}
+ else if(left>0){$('stamp').textContent='아쉬워요! 남은 기회 '+left+'번';$('againBtn').classList.remove('hidden');$('againBtn').textContent='다시 도전 ('+left+'번)';$('nextBtn').classList.add('hidden');}
+ else{$('stamp').textContent='기회 끝! 다음에 또 와요';$('againBtn').classList.add('hidden');$('nextBtn').classList.remove('hidden');}
  state.receipt=null;try{state.receipt=drawReceipt();}catch(e){}
- homeTimer=setTimeout(reset,AUTO_HOME_SEC*1000);
+ homeTimer=setTimeout(function(){reset();newPerson();},AUTO_HOME_SEC*1000);
 }
 function confetti(){var c=$('confetti'),h='',cols=['#ff4f8b','#ffd23f','#ff8a1f','#18a058','#2f7de1','#a66cff'];for(var i=0;i<70;i++)h+='<i style="left:'+(Math.random()*100).toFixed(1)+'%;background:'+cols[i%6]+';--dx:'+((Math.random()-.5)*200).toFixed(0)+'px;animation-duration:'+(2.2+Math.random()*2).toFixed(1)+'s;animation-delay:'+(Math.random()*.6).toFixed(2)+'s"></i>';c.innerHTML=h;setTimeout(function(){c.innerHTML='';},5000);}
 function reset(){
- clearTimeout(homeTimer);live=true;$('still').classList.add('hidden');$('how').classList.remove('hidden');$('result').classList.add('hidden');
- $('rtitle').innerHTML='<b>2</b>웃음 측정기';$('startBtn').classList.remove('hidden');$('after').classList.add('hidden');$('hint').textContent='';
+ clearTimeout(homeTimer);live=true;$('result').closest('.panel').classList.remove('res');$('still').classList.add('hidden');$('how').classList.remove('hidden');$('result').classList.add('hidden');
+ $('passNote').classList.add('hidden');$('rtitle').innerHTML='<b>2</b>웃음 측정기';$('startBtn').classList.remove('hidden');$('after').classList.add('hidden');$('nextBtn').classList.add('hidden');$('againBtn').classList.remove('hidden');$('againBtn').textContent='다시 도전';$('hint').textContent='';
  var old=$('altLink');if(old)old.remove();state={photo:null,score:0,face:0,voice:0,receipt:null};
 }
 $('againBtn').onclick=reset;
+$('nextBtn').onclick=function(){reset();newPerson();};
 
 /* ---------------- 인증서 (영수증) ---------------- */
 function drawReceipt(){
@@ -296,19 +409,21 @@ function drawReceipt(){
  function t(str,font,lh){ctx.font=font;ctx.fillText(str,W/2,y);y+=lh;}
  function face(cx,cy,r){ctx.save();ctx.lineWidth=3;ctx.beginPath();ctx.arc(cx,cy,r,0,7);ctx.stroke();ctx.beginPath();ctx.arc(cx-r*.35,cy-r*.2,r*.1,0,7);ctx.arc(cx+r*.35,cy-r*.2,r*.1,0,7);ctx.fill();ctx.beginPath();ctx.arc(cx,cy+r*.05,r*.5,.15*Math.PI,.85*Math.PI);ctx.stroke();ctx.restore();}
  for(var k=0;k<9;k++)face(P+20+k*(W-P*2-40)/8,y+14,13);y+=46;
- t(EVENT_NAME+' 인증서',"900 40px "+SANS,58);
+ if(CLUB_LINE)t(CLUB_LINE,"700 22px "+SANS,36);
+ t(MISSION_NAME+' '+EVENT_NAME,"900 40px "+SANS,58);
  t('당신의 웃음을 보여주세요!',"30px "+CUTE,50);
  if(state.photo){var pw=W-P*2-20,ph=Math.round(pw*state.photo.height/state.photo.width),px=(W-pw)/2;ctx.lineWidth=2.5;ctx.strokeRect(px-1,y-1,pw+2,ph+2);ctx.drawImage(ditherPhoto(state.photo,pw,ph),px,y);y+=ph+22;}
  t('나의 웃음 점수',"700 26px "+SANS,40);
  ctx.font="120px "+FUN;var sw=ctx.measureText(String(s)).width;ctx.fillText(String(s),W/2-24,y);ctx.font="900 40px "+SANS;ctx.textAlign='left';ctx.fillText('점',W/2-24+sw/2+6,y+66);ctx.textAlign='center';y+=140;
  // 도장
- ctx.save();ctx.translate(W/2,y+56);ctx.rotate(-.06);ctx.lineWidth=5;ctx.beginPath();ctx.ellipse(0,0,170,50,0,0,7);ctx.stroke();ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(0,0,158,40,0,0,7);ctx.stroke();ctx.font="40px "+FUN;ctx.textBaseline='middle';ctx.fillText(pass?'미션 통과!':'다음엔 꼭!',0,2);ctx.restore();y+=130;
+ ctx.save();ctx.translate(W/2,y+56);ctx.rotate(-.06);ctx.lineWidth=5;ctx.beginPath();ctx.ellipse(0,0,170,50,0,0,7);ctx.stroke();ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(0,0,158,40,0,0,7);ctx.stroke();ctx.font="40px "+FUN;ctx.textBaseline='middle';ctx.fillText(pass?'관문 통과!':'다음엔 꼭!',0,2);ctx.restore();y+=130;
  // 막대
  function bar(label,v){ctx.textAlign='left';ctx.font="700 24px "+SANS;ctx.fillText(label,P+10,y);ctx.textAlign='right';ctx.fillText(Math.round(v*100)+'%',W-P-10,y);y+=36;ctx.lineWidth=2.5;ctx.strokeRect(P+10,y,W-P*2-20,22);ctx.fillRect(P+10,y,(W-P*2-20)*Math.max(0,Math.min(1,v)),22);y+=40;ctx.textAlign='center';}
  bar('활짝 웃는 얼굴',state.face);if(hasMic||DEMO)bar('웃음 소리',state.voice);
- y+=6;ctx.font="28px "+CUTE;var m=state.noFace?'얼굴이 잘 안 보였어요':(SCORE_MSG[s]||'');m=m.replace(/[\u{1F300}-\u{1FAFF}☀-➿]/gu,'').trim();
+ y+=6;ctx.font="28px "+CUTE;var m=state.noFace?'얼굴이 안 보여요, 다시 도전!':state.msg;m=m.replace(/[\u{1F300}-\u{1FAFF}☀-➿]/gu,'').trim();
  var words=m.split(' '),line='',lines=[];words.forEach(function(w){var tt=line?line+' '+w:w;if(ctx.measureText(tt).width>W-P*2-20){lines.push(line);line=w;}else line=tt;});if(line)lines.push(line);
  lines.forEach(function(l){ctx.fillText(l,W/2,y);y+=40;});
+ if(pass){y+=8;ctx.lineWidth=2.5;ctx.setLineDash([6,6]);ctx.strokeRect(W/2-150,y,300,96);ctx.setLineDash([]);ctx.font="700 20px "+SANS;ctx.fillText('진행자 확인 도장',W/2,y+8);y+=112;}
  y+=10;var d=new Date();t(d.getFullYear()+'. '+(d.getMonth()+1)+'. '+d.getDate()+'.',"700 22px "+SANS,36);
  if(RECEIPT_FOOTER)t(RECEIPT_FOOTER,"900 26px "+SANS,40);
  y+=10;for(var k2=0;k2<9;k2++)face(P+20+k2*(W-P*2-40)/8,y+14,13);y+=50;
@@ -413,10 +528,10 @@ $('printBtn').onclick=function(){
    if(!ok){printing=false;$('printBtn').disabled=false;hint.textContent=msg;return;}
    fullySend(f,bytes,function(sent){printing=false;$('printBtn').disabled=false;
     hint.textContent=sent?'인증서가 나오면 가져가세요!':'전송 중 연결이 끊겼어요. 다시 눌러 주세요.';if(!sent){try{f.btClose();}catch(e){}}
-    homeTimer=setTimeout(reset,AUTO_HOME_SEC*1000);});
+    homeTimer=setTimeout(function(){reset();newPerson();},AUTO_HOME_SEC*1000);});
   });return;
  }
- printViaDialog(canvas,hint);homeTimer=setTimeout(reset,AUTO_HOME_SEC*1000);
+ printViaDialog(canvas,hint);homeTimer=setTimeout(function(){reset();newPerson();},AUTO_HOME_SEC*1000);
 };
 function receiptPageCss(canvas){
  var hmm=Math.ceil(canvas.height/canvas.width*72)+2;
@@ -446,6 +561,7 @@ function printInNewWindow(url,css,hint){
  w.document.close();
 }
 
+newPerson();drawBoard();
 startCamera();
 </script>
 </body>
