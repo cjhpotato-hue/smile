@@ -305,11 +305,11 @@ var FACE_WEIGHT  = 0.55;        // 얼굴 웃음 비중 (나머지는 소리)
 var VOICE_WEIGHT = 0.45;        // 웃음 소리 비중 (높을수록 크게 웃어야 통과)
 /* 점수표: 계산한 값(0~100)이 [기준] 이상이면 [점수]를 줘요. 위에서부터 차례로 봐요. */
 var SCORE_TABLE = [
- [85,100],
- [68, 90],
- [50, 70],
- [30, 50],
- [10, 20],
+ [93,100],
+ [84, 90],
+ [72, 70],
+ [52, 50],
+ [28, 20],
  [0,   0]
 ];
 /* 점수별 결과 문구 (2026 수고 + 2027 많이 웃자). 여러 개면 그중 하나가 무작위로 나와요 */
@@ -322,7 +322,13 @@ var SCORE_MSG = {
  0:  ['2026 피곤 인정, 2027 충전!','웃음 배터리 0%, 2027 충전!']
 };
 var MSG_TAIL = '';   // 문구 뒤에 붙일 말 (예: ' 😆')
-var VOICE_SENS    = 38;         // 소리 감도: 주변 소음보다 몇 dB 더 크면 100%인지 (작을수록 쉽게 100%, 클수록 어려움)
+var VOICE_SENS    = 28;         // 소리 감도: 주변 소음보다 (VOICE_GAP + 이 값) dB 더 크면 100% (클수록 어려움)
+var VOICE_GAP     = 12;         // 주변 소음보다 이만큼(dB) 커야 소리 점수가 오르기 시작 (클수록 어려움)
+var LOUD_ZERO_DB  = -38;        // 실제 소리 크기 기준: 이보다 작으면 0% (dBFS, 클수록 어려움)
+var LOUD_FULL_DB  = -10;        // 이만큼 크게 웃어야 100% (dBFS, 0에 가까울수록 어려움)
+var FACE_START    = 0.45;       // 얼굴: 이 정도 웃음까지는 0점 (클수록 어려움)
+var FACE_RANGE    = 0.48;       // 얼굴: FACE_START + 이 값이면 100%
+var BALANCE_BONUS = 22;         // 얼굴·소리 중 약한 쪽 + 이 값을 넘지 못함 (작을수록 둘 다 잘해야 통과)
 var PRINT_ON      = false;      // 인증서 출력 버튼 (사용 안 함)
 var EVENT_NAME    = '관문 통과';             // 인증서 제목 (미션 이름 뒤에 붙어요)
 var RECEIPT_FOOTER= '';                      // 인증서 맨 아래 한 줄 (예: '○○고등학교 축제')
@@ -379,13 +385,18 @@ function readFace(){   // 0~1 활짝 웃는 정도. 얼굴이 없으면 -1
  if(!r||!r.faceBlendshapes||!r.faceBlendshapes.length){lastFace=-1;return -1;}
  var c=r.faceBlendshapes[0].categories,g={};c.forEach(function(x){g[x.categoryName]=x.score;});
  var smile=((g.mouthSmileLeft||0)+(g.mouthSmileRight||0))/2,cheek=((g.cheekSquintLeft||0)+(g.cheekSquintRight||0))/2,open=g.jawOpen||0;
- var v=Math.min(1,smile*0.78+Math.min(open,0.55)*0.32+cheek*0.25);
+ var sL=g.mouthSmileLeft||0,sR=g.mouthSmileRight||0;smile=Math.min(sL,sR)*0.7+smile*0.3;   // 양쪽 입꼬리가 모두 올라가야 함
+ var v=Math.min(1,smile*0.7+Math.min(open,0.6)*0.25+cheek*0.25);
+ v=Math.max(0,Math.min(1,(v-FACE_START)/FACE_RANGE));v=Math.pow(v,1.25);
  lastFace=v;return v;
 }
 function readVoice(base){   // 0~1 웃음 소리 크기 (주변 소음보다 얼마나 큰지)
  if(DEMO)return 0.2+0.75*Math.abs(Math.sin(Date.now()/600));
  if(!hasMic)return 0;
- return Math.max(0,Math.min(1,(micDb()-(base+6))/VOICE_SENS));
+ var db=micDb();
+ var rel=(db-(base+VOICE_GAP))/VOICE_SENS;              // 주변 소음보다 얼마나 큰지
+ var abs=(db-LOUD_ZERO_DB)/(LOUD_FULL_DB-LOUD_ZERO_DB);   // 실제로 얼마나 큰지 (조용한 곳에서도 쉽게 안 나오게)
+ return Math.max(0,Math.min(1,Math.min(rel,abs)));
 }
 
 /* ---------------- 실시간 게이지 ---------------- */
@@ -393,7 +404,7 @@ var noiseBase=-60,live=true;
 function setGauge(f,v){var mr=document.getElementById('micRing');if(mr)mr.style.setProperty('--lv',(0.6+v*1.6).toFixed(2));f=Math.max(0,f);$('fbar').style.width=(f*100).toFixed(0)+'%';$('fv').textContent=Math.round(f*100)+'%';$('vbar').style.width=(v*100).toFixed(0)+'%';$('vv').textContent=hasMic||DEMO?Math.round(v*100)+'%':'꺼짐';}
 (function loop(){
  if(live){var f=readFace(),v=readVoice(noiseBase);setGauge(f,v);
-  if(!DEMO&&hasMic){var d=micDb();noiseBase=noiseBase*0.98+Math.min(d,noiseBase+6)*0.02;}}   // 주변 소음을 천천히 따라감
+  if(!DEMO&&hasMic){var d=micDb();noiseBase=noiseBase*0.985+Math.min(d,noiseBase+4)*0.015;}}   // 주변 소음을 천천히 따라감
  requestAnimationFrame(loop);
 })();
 
@@ -494,9 +505,10 @@ function measure(){
 }
 function topMean(a,frac){if(!a.length)return 0;var b=a.slice().sort(function(x,y){return y-x;});var n=Math.max(1,Math.round(b.length*frac));var s=0;for(var i=0;i<n;i++)s+=b[i];return s/n;}
 function finish(faces,voices,seenRatio,shot){
- var face=topMean(faces,0.6),voice=topMean(voices,0.4);
+ var face=topMean(faces,0.7),voice=topMean(voices,0.7);   // 2초 내내 꾸준히 웃어야 높게 나옴
  var fw=FACE_WEIGHT,vw=VOICE_WEIGHT;if(!hasMic&&!DEMO){fw=1;vw=0;}
  var raw=(face*fw+voice*vw)/(fw+vw)*100;
+ if(vw>0)raw=Math.min(raw,Math.min(face,voice)*100+BALANCE_BONUS);   // 얼굴과 소리 둘 다 잘해야 함
  if(seenRatio<0.3)raw=Math.min(raw,8);   // 얼굴이 거의 안 보이면 0점
  var score=0;for(var i=0;i<SCORE_TABLE.length;i++)if(raw>=SCORE_TABLE[i][0]){score=SCORE_TABLE[i][1];break;}
  state.face=face;state.voice=voice;state.score=score;state.photo=shot;state.noFace=seenRatio<0.3;state.msg=pickMsg(score);
